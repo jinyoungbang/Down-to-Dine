@@ -14,22 +14,21 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/', methods=['POST'])
-def my_form_post():
-    text = request.form['text']
-    processed_text = text.upper()
-    return processed_text
-
-
-@app.route('/location')
+@app.route('/location', methods=['POST'])
 def index1():
-    restaurants = p.search(lat="42.350301", lon="-71.102678", radius="500")
+    user_location = request.form['text']
+    restaurants = p.search(q=user_location)
     return jsonify(restaurants)
 
 @app.route('/averageprice')
 def index2():
     restaurants = p.search(q="Boston")
     return restaurants["restaurants"][0]["restaurant"]["average_cost_for_two"]
+
+@app.route('/test')
+def index3():
+    restaurants = p.search(lat="42.350301", lon="-71.102678", radius="500")
+    return jsonify(restaurants)
 
 if __name__ == '__main__':
     app.run()
