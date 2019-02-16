@@ -14,6 +14,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/begin', methods=['GET', 'POST'])
+def testing():
+    return render_template('begin.html')
+
 @app.route('/location', methods=['POST'])
 def index1():
     user_location = request.form['text']
