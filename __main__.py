@@ -18,7 +18,7 @@ def index():
 def index1():
     user_location = request.form['text']
     restaurants = p.search(q=user_location)
-    return jsonify(restaurants)
+    return jsonify(restaurantsw)
 
 @app.route('/averageprice')
 def index2():
