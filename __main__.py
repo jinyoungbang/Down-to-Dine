@@ -31,7 +31,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/result', methods=['POST', 'GET'])
+@app.route('/begin', methods=['POST', 'GET'])
 def index1():
     # gets user-inputted value of location
     user_text = request.form['location']
@@ -89,7 +89,7 @@ def index1():
 
 
 
-    return jsonify(dict)
+    return render_template('begin.html')
 
 if __name__ == '__main__':
     app.run()
