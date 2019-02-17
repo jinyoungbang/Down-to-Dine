@@ -68,7 +68,7 @@ def index1():
 @app.route('/results', methods=['POST','GET'])
 def results():
 
-    print(request.form)
+    #print(request.form)
     user_text = request.form['location']
     user_price = request.form['price']
 
@@ -82,7 +82,7 @@ def results():
     for i in range(len(restaurants_dict["restaurants"])-1):
         array += [restaurants_dict["restaurants"][i]["restaurant"]["average_cost_for_two"]]
 
-    print(array)
+    #print(array)
 
     three_sets = []
 
@@ -97,9 +97,9 @@ def results():
                 if array[i] + array[j] + array[k] <= int(user_price) * 2:
                     three_sets +=  [[i, j, k]]
 
-    print(three_sets)
-    print(array)
-    print(arr_size)
+    #print(three_sets)
+    #print(array)
+    #print(arr_size)
 
     dictionary = {}
     count = 0
