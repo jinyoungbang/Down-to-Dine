@@ -68,7 +68,7 @@ def index1():
 @app.route('/results', methods=['POST','GET'])
 def results():
 
-    print(request.form)
+    #print(request.form)
     user_text = request.form['location']
     user_price = request.form['price']
 
@@ -82,7 +82,7 @@ def results():
     for i in range(len(restaurants_dict["restaurants"])-1):
         array += [restaurants_dict["restaurants"][i]["restaurant"]["average_cost_for_two"]]
 
-    print(array)
+    #print(array)
 
     three_sets = []
 
@@ -97,9 +97,9 @@ def results():
                 if array[i] + array[j] + array[k] <= int(user_price) * 2:
                     three_sets +=  [[i, j, k]]
 
-    print(three_sets)
-    print(array)
-    print(arr_size)
+    #print(three_sets)
+    #print(array)
+    #print(arr_size)
 
     dictionary = {}
     count = 0
@@ -124,9 +124,16 @@ def results():
     cost3 = dictionary[random_num]["dinner"]["cost"]
     location1 = dictionary[random_num]["morning"]["location"]
     location2 = dictionary[random_num]["lunch"]["location"]
-    location3 = dictionary[random_num]["lunch"]["location"]
+    location3 = dictionary[random_num]["dinner"]["location"]
 
-    return render_template('result.html', name1 = name1, name2 = name2, name3 = name3, cost1=cost1, cost2=cost2, cost3=cost3, location1=location1, location2=location2, location3=location3)
+    geocode_loc1 = gmaps.geocode(location1)
+    place_id_1 = geocode_loc1[0].get("place_id")
+    geocode_loc2 = gmaps.geocode(location2)
+    place_id_2 = geocode_loc2[0].get("place_id")
+    geocode_loc3 = gmaps.geocode(location3)
+    place_id_3 = geocode_loc3[0].get("place_id")
+
+    return render_template('result.html', name1 = name1, name2 = name2, name3 = name3, cost1=cost1, cost2=cost2, cost3=cost3, location1=location1, location2=location2, location3=location3, place_id_1=place_id_1, place_id_2=place_id_2, place_id_3=place_id_3)
 
 @app.errorhandler(400)
 def page_not_found(error):

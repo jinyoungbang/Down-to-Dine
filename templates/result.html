@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dining Plan</title>
+    <title>Dining Plan - Recommendations</title>
     <link rel="shortcut icon" type="image/png" href="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Food-Dome-512.png"/>
     <!-- Bootstrap core CSS -->
     <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,12 +23,17 @@
 
   </head>
 
+ 
+
   <body id="page-top">
+
+    
+
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="/" style="color:#ffffffcc">DINING PLAN</a>
+        <a class="navbar-brand js-scroll-trigger" href="/" style="color:#ffffff">HOME</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -36,7 +41,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/test" style="color:#ffffff">Start Planning</a>
+              <a class="nav-link js-scroll-trigger" href="/test" style="color:#ffffff">Back to Planning</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#page-top" style="color:#ffffff">Recommendations</a>
             </li>
           </ul>
         </div>
@@ -56,9 +64,12 @@
                 <h4 class="text-uppercase m-0">{{ name1 }}</h4>
                 <hr class="my-4">
                 <div class="small text-black-50">
-                    <a href="#">${{ cost1 }}</a>
-                    <p>{{ location1 }}</p>
+                  <p>${{ cost1 }}</p>
+                  <a href="#">{{ location1 }}</a>
+                  <p></p>
                 </div>
+                <iframe width=100% height=250px frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=place_id:{{place_id_1}}&key=AIzaSyBDtAuRglLxqayiu2axcdVnJ8__0RbDHmg" allowfullscreen></iframe>
               </div>
             </div>
           </div>
@@ -70,9 +81,12 @@
                 <h4 class="text-uppercase m-0">{{ name2 }}</h4>
                 <hr class="my-4">
                 <div class="small text-black-50">
-                  <a href="#">${{ cost2 }}</a>
-                  <p>{{ location2 }}</p>
+                  <p>${{ cost2 }}</p>
+                  <a href="#">{{ location2 }}</a>
+                  <p></p>
                 </div>
+                <iframe width=100% height=250px frameborder=3px style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=place_id:{{place_id_2}}&key=AIzaSyBDtAuRglLxqayiu2axcdVnJ8__0RbDHmg" allowfullscreen></iframe>
               </div>
             </div>
           </div>
@@ -84,13 +98,17 @@
                 <h4 class="text-uppercase m-0">{{ name3 }}</h4>
                 <hr class="my-4">
                 <div class="small text-black-50">
-                  <a href="#">${{ cost3 }}</a>
-                  <p>{{ location3 }}</p>
+                  <p>${{ cost3 }}</p>
+                  <a href="#">{{ location3 }}</a>
+                  <p></p>
                 </div>
+                <iframe width=100% height=250px frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=place_id:{{place_id_3}}&key=AIzaSyBDtAuRglLxqayiu2axcdVnJ8__0RbDHmg" allowfullscreen></iframe>
               </div>
             </div>
           </div>
         </div>
+
 
         
 
@@ -103,7 +121,7 @@
     <!-- Footer -->
     <footer class="bg-black small text-center text-white-50">
       <div class="container">
-        Copyright &copy; ginomcfino 2019
+       
       </div>
     </footer>
 
