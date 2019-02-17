@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, url_for
 import requests
 import pprint
 import json
@@ -67,6 +67,8 @@ def index1():
 @app.route('/results', methods=['POST','GET'])
 
 def results():
+    print("reach here")
+    print(request.form)
     user_text = request.form['location']
     user_price = request.form['price']
 
@@ -85,6 +87,14 @@ def results():
     three_sets = []
 
     arr_size = len(array)
+
+    if arr_size <= 0:
+        return render_template('error.html')
+    elif user_text == "":
+        return render_template('error.html')
+    elif int(user_price) < 10:
+        return render_template('error.html')
+
     # Fix the first element as A[i]
     for i in range(0, arr_size-2):
         # Fix the second element as A[j]
@@ -112,9 +122,18 @@ def results():
             dictionary[i][j[1]]["location"] = location
             dictionary[i][j[1]]["cost"] = cost
 
+    random_num = random.randrange(0, len(three_sets)-1)
+    name1 = dictionary[random_num]["morning"]["name"]
+    name2 = dictionary[random_num]["lunch"]["name"]
+    name3 = dictionary[random_num]["dinner"]["name"]
+    cost1 = dictionary[random_num]["morning"]["cost"]
+    cost2 = dictionary[random_num]["lunch"]["cost"]
+    cost3 = dictionary[random_num]["dinner"]["cost"]
+    location1 = dictionary[random_num]["morning"]["location"]
+    location2 = dictionary[random_num]["lunch"]["location"]
+    location3 = dictionary[random_num]["lunch"]["location"]
 
-
-    return jsonify(dictionary)
+    return render_template('result.html', name1 = name1, name2 = name2, name3 = name3, cost1=cost1, cost2=cost2, cost3=cost3, location1=location1, location2=location2, location3=location3)
 
 
 if __name__ == '__main__':

@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html" style="color:#ffffffcc">DINING PLAN</a>
+        <a class="navbar-brand js-scroll-trigger" href="/" style="color:#ffffffcc">DINING PLAN</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="begin.html" style="color:#ffffff">Start Planning</a>
+              <a class="nav-link js-scroll-trigger" href="/test" style="color:#ffffff">Start Planning</a>
             </li>
           </ul>
         </div>
@@ -53,11 +53,11 @@
             <div class="card py-4 h-100">
               <div class="card-body text-center">
                 <i class="fas fa-cocktail text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">RESTAURANT 1</h4>
+                <h4 class="text-uppercase m-0">{{ name1 }}</h4>
                 <hr class="my-4">
                 <div class="small text-black-50">
-                    <a href="#">Make a reservation</a>
-                    <p>...insert address here...</p>
+                    <a href="#">${{ cost1 }}</a>
+                    <p>{{ location1 }}</p>
                 </div>
               </div>
             </div>
@@ -67,11 +67,11 @@
             <div class="card py-4 h-100">
               <div class="card-body text-center">
                 <i class="fas fa-glass-martini text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">RESTAURANT 2</h4>
+                <h4 class="text-uppercase m-0">{{ name2 }}</h4>
                 <hr class="my-4">
                 <div class="small text-black-50">
-                  <a href="#">Make a reservation</a>
-                  <p>...insert address here...</p>
+                  <a href="#">${{ cost2 }}</a>
+                  <p>{{ location2 }}</p>
                 </div>
               </div>
             </div>
@@ -81,11 +81,11 @@
             <div class="card py-4 h-100">
               <div class="card-body text-center">
                 <i class="fas fa-glass-martini-alt text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">RESTAURANT 3</h4>
+                <h4 class="text-uppercase m-0">{{ name3 }}</h4>
                 <hr class="my-4">
                 <div class="small text-black-50">
-                  <a href="#">Make a reservation</a>
-                  <p>...insert address here...</p>
+                  <a href="#">${{ cost3 }}</a>
+                  <p>{{ location3 }}</p>
                 </div>
               </div>
             </div>

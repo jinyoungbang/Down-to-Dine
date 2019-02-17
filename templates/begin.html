@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html" style="color:#ffffffcc;">HOME</a>
+        <a class="navbar-brand js-scroll-trigger" href="/" style="color:#ffffffcc;">HOME</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -39,7 +39,7 @@
               <a class="nav-link js-scroll-trigger" href="#page-top" style="color:#ffffffcc;">Start Planning</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="result.html" style="color:#ffffffcc;">Result TEST</a>
+              <a class="nav-link js-scroll-trigger" href="/results" style="color:#ffffffcc;">Result TEST</a>
             </li>
           </ul>
         </div>
@@ -59,10 +59,12 @@
 
             <h2 class="text-white mb-5">Just enter your location and your budget, and we'll do the rest!</h2>
 
-            <form class="form-inline d-flex">
-              <input type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputLocation" placeholder="location...">
-              <input type="number" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputBudget" placeholder="budget...">
-              <button type="submit" class="btn btn-primary mx-auto">Enter</button>
+            <form method="post" action="/results" class="form-inline d-flex">
+              <div class="form">
+              <input type="text" name="location" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputLocation" placeholder="location...">
+              <input type="number" name="price" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputBudget" placeholder="budget...">
+              <input type="submit" class="btn btn-primary mx-auto">Enter</input>
+            </div>
             </form>
 
           </div>
