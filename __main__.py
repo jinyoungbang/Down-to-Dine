@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, url_for
+from flask import Flask, request, jsonify, render_template, url_for, redirect
 import requests
 import pprint
 import json
@@ -128,9 +128,9 @@ def results():
 
     return render_template('result.html', name1 = name1, name2 = name2, name3 = name3, cost1=cost1, cost2=cost2, cost3=cost3, location1=location1, location2=location2, location3=location3)
 
-@app.route('/error', methods=['POST', 'GET'])
-def error():
-    return render_template('error.html')
+@app.errorhandler(400)
+def page_not_found(error):
+    return render_template('error.html'), 400
 
 if __name__ == '__main__':
     app.run(debug=True)
