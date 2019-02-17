@@ -56,10 +56,10 @@
 
             <h2 class="text-white mb-5">Just enter your location and your budget, and we'll do the rest!</h2>
 
-            <form method="POST" class="form-inline d-flex" action="#">
-              <input type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputLocation" placeholder="location..." name="location">
-              <input type="number" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputBudget" placeholder="budget..." name="price">
-              <button type="submit" class="btn btn-primary mx-auto" href="/result">Enter</button>
+            <form method="POST" class="form-inline d-flex" action="/results">
+              <input name="location" type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputLocation" placeholder="location...">
+              <input name="price" type="number" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputBudget" placeholder="budget...">
+              <a href="/results" class="btn btn-primary js-scroll-trigger">Enter</a>
             </form>
 
           </div>
