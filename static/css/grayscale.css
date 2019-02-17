@@ -6,7 +6,7 @@
 
 #mainNav {
   min-height: 56px;
-  background-color: #fff;
+  background-color: rgba(66, 66, 66, 0.521);
 }
 
 #mainNav .navbar-toggler {
