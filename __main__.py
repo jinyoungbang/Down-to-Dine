@@ -124,9 +124,16 @@ def results():
     cost3 = dictionary[random_num]["dinner"]["cost"]
     location1 = dictionary[random_num]["morning"]["location"]
     location2 = dictionary[random_num]["lunch"]["location"]
-    location3 = dictionary[random_num]["lunch"]["location"]
+    location3 = dictionary[random_num]["dinner"]["location"]
 
-    return render_template('result.html', name1 = name1, name2 = name2, name3 = name3, cost1=cost1, cost2=cost2, cost3=cost3, location1=location1, location2=location2, location3=location3)
+    geocode_loc1 = gmaps.geocode(location1)
+    place_id_1 = geocode_loc1[0].get("place_id")
+    geocode_loc2 = gmaps.geocode(location2)
+    place_id_2 = geocode_loc2[0].get("place_id")
+    geocode_loc3 = gmaps.geocode(location3)
+    place_id_3 = geocode_loc3[0].get("place_id")
+
+    return render_template('result.html', name1 = name1, name2 = name2, name3 = name3, cost1=cost1, cost2=cost2, cost3=cost3, location1=location1, location2=location2, location3=location3, place_id_1=place_id_1, place_id_2=place_id_2, place_id_3=place_id_3)
 
 @app.errorhandler(400)
 def page_not_found(error):
