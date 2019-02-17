@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template, url_for
 import requests
 import pprint
 import json
+import os
 import googlemaps
 from datetime import datetime
 from pyzomato import Pyzomato
@@ -67,6 +68,13 @@ def index1():
 @app.route('/results', methods=['POST','GET'])
 
 def results():
+    if arr_size <= 0:
+        return redirect('/error')
+    elif user_text == "":
+        return redirect('/error')
+    elif int(user_price) < 10:
+        return redirect('/error')
+
     print("reach here")
     print(request.form)
     user_text = request.form['location']
@@ -87,13 +95,6 @@ def results():
     three_sets = []
 
     arr_size = len(array)
-
-    if arr_size <= 0:
-        return render_template('error.html')
-    elif user_text == "":
-        return render_template('error.html')
-    elif int(user_price) < 10:
-        return render_template('error.html')
 
     # Fix the first element as A[i]
     for i in range(0, arr_size-2):
@@ -135,9 +136,12 @@ def results():
 
     return render_template('result.html', name1 = name1, name2 = name2, name3 = name3, cost1=cost1, cost2=cost2, cost3=cost3, location1=location1, location2=location2, location3=location3)
 
+@app.route('/error', methods=['POST', 'GET'])
+def error():
+    return render_template('error.html')
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug=True)
 
 
 ##############################################################################
