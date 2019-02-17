@@ -66,16 +66,8 @@ def index1():
 
 
 @app.route('/results', methods=['POST','GET'])
-
 def results():
-    if arr_size <= 0:
-        return redirect('/error')
-    elif user_text == "":
-        return redirect('/error')
-    elif int(user_price) < 10:
-        return redirect('/error')
 
-    print("reach here")
     print(request.form)
     user_text = request.form['location']
     user_price = request.form['price']
