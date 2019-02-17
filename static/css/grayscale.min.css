@@ -88,7 +88,7 @@
 }
 
 .masthead {
-    position: relative;
+    position: fixed;
     width: 100%;
     height: auto;
     min-height: 35rem;
@@ -98,7 +98,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-size: cover
+    background-size: cover;
 }
 
 
@@ -212,7 +212,7 @@
 
 .signup-section {
     position: fixed;
-    width: 100%;
+    min-width: 100%;
     padding: 15rem 0;
     height:100%;
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, .1)), color-stop(75%, rgba(22, 22, 22, .5)), to(#161616)), url(../img/bg-signup.jpg);
@@ -236,23 +236,33 @@
 }
 
 .contact-section {
-    padding: 5rem 0 0
+    position: fixed;
+    height: 100%;
+    min-width: 100%;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, .1)), color-stop(75%, rgba(22, 22, 22, .5)), to(#161616a8)), url(../img/resultPage.jpg);
+    background: linear-gradient(to bottom, rgba(22, 22, 22, .1) 0, rgba(22, 22, 22, .5) 75%, #161616 100%), url(../img/resultPage.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover
 }
 
 .contact-section .card {
     border: 0;
-    border-bottom: .25rem solid #64a19d
+    border-bottom: .25rem solid rgba(110, 35, 44, 0.849)
 }
 
 .contact-section .card h4 {
-    font-size: .8rem;
+    font-size: 1.2rem;
     font-family: 'Varela Round';
     text-transform: uppercase;
     letter-spacing: .15rem
 }
 
 .contact-section .card hr {
-    border-color: #64a19d;
+    border-color: #ffc400;
     border-width: .25rem;
     width: 3rem
 }
@@ -285,7 +295,7 @@ body {
 }
 
 a {
-    color: #64a19d
+    color: #000000
 }
 
 a:focus,
@@ -299,11 +309,11 @@ a:hover {
 }
 
 .bg-primary {
-    background-color: #64a19d!important
+    background-color: #722f37!important
 }
 
 .text-primary {
-    color: #64a19d!important
+    color: #ffc400!important
 }
 
 footer {
