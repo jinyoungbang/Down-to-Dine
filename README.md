@@ -1,4 +1,4 @@
-# HackNYU19
+# Down to Dine
 
 ## Inspiration
 When going out, we realized that it costs a lot of money to buy food outside. Searching for cheap restaurants can be a time consuming task, and thus we wanted to simplify it.
